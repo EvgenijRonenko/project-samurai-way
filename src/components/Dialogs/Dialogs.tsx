@@ -1,8 +1,9 @@
+import classes from '../Profile/Profile.module.css';
 
 
 export const Dialogs = () => {
   return (
-      <div>
+      <div className={classes.content}>
 
       </div>
   )
