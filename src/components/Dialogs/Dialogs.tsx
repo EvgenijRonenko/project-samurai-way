@@ -1,10 +1,10 @@
-import classes from '../Profile/Profile.module.css';
+import classes from '../Dialogs/Dialogs.module.css';
 
 
 export const Dialogs = () => {
-  return (
-      <div className={classes.content}>
-
-      </div>
-  )
+    return (
+        <div className={classes.content}>
+            Dialogs
+        </div>
+    )
 }

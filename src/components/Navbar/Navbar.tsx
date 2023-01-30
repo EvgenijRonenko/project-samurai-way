@@ -4,19 +4,19 @@ import classes from './Navbar.module.css'
 export const Navbar = () => {
     return <nav>
         <div className={classes.nav}>
-            <a>Profile</a>
+            <a href={'/profile'}>Profile</a>
         </div>
         <div  className={classes.item}>
-            <a>Messages</a>
+            <a href={'/profile'}>Messages</a>
         </div>
         <div className={classes.item}>
-            <a>News</a>
+            <a href={'/profile'}>News</a>
         </div>
         <div className={classes.item}>
-            <a>Music</a>
+            <a href={'/profile'}>Music</a>
         </div>
         <div className={classes.item}>
-            <a>Settings</a>
+            <a href={'/profile'}>Settings</a>
         </div>
     </nav>
 }
