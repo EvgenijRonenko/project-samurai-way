@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './MyPosts.module.css'
+import s from './MyPosts.module.css'
 import {Post} from './Post/Post';
 
 export const MyPosts = () => {
@@ -7,10 +7,12 @@ export const MyPosts = () => {
         <div>
             My posts
             <div>
-                New post
+                <textarea></textarea>
+                <button>New post</button>
             </div>
-            <div className={classes.posts}>
-                <Post/>
+            <div className={s.posts}>
+                <Post message={'Hi, how are you?'} likesCount={'0'}/>
+                <Post message={"It's my first post"} likesCount={'23'}/>
             </div>
         </div>
     )
