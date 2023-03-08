@@ -10,7 +10,17 @@ import {Music} from './components/Music/Music';
 import {Settings} from './components/Settings/Settings';
 
 
-const App = () => {
+type PostsType = {
+    id: number
+    message: string
+    likesCount: number
+}
+
+type AppType = {
+    posts: PostsType[]
+}
+
+const App = (props: AppType) => {
     return (
         <BrowserRouter>
             <div className="app-wrapper">
@@ -19,7 +29,7 @@ const App = () => {
                 <div className="app-wrapper-content">
                     <Routes>
                         <Route path="/dialogs/*" element={<Dialogs/>}/>
-                        {/*<Route path="/profile/" element={<Profile/>}/>*/}
+                        <Route path="/profile/*" element={<Profile posts={props.posts}/>}/>
                         <Route path="/news" element={<News/>}/>
                         <Route path="/music" element={<Music/>}/>
                         <Route path="/settings" element={<Settings/>}/>

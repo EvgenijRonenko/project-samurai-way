@@ -14,7 +14,7 @@ type MyPostsPropsType = {
 
 export const MyPosts = (props: MyPostsPropsType) => {
 
-    const postElements = props.posts.map(p => <Post message={p.message} likesCount={p.likesCount} id={p.id}/>)
+    const postElements = props.posts.map(p => <Post posts={props.posts}/>)
 
     return (
         <div className={s.postsBlock}>
