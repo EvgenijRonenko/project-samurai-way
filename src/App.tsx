@@ -15,9 +15,20 @@ type PostsType = {
     message: string
     likesCount: number
 }
+type DialogsType = {
+  id: number
+  name: string
+}
+
+type MessagesType = {
+    id: number
+    message: string
+}
 
 type AppType = {
     posts: PostsType[]
+    messages: MessagesType[]
+    dialogs: DialogsType[]
 }
 
 const App = (props: AppType) => {
@@ -28,7 +39,7 @@ const App = (props: AppType) => {
                 <Navbar/>
                 <div className="app-wrapper-content">
                     <Routes>
-                        <Route path="/dialogs/*" element={<Dialogs/>}/>
+                        <Route path="/dialogs/*" element={<Dialogs dialogs={props.dialogs} messages={props.messages}/>}/>
                         <Route path="/profile/*" element={<Profile posts={props.posts}/>}/>
                         <Route path="/news" element={<News/>}/>
                         <Route path="/music" element={<Music/>}/>

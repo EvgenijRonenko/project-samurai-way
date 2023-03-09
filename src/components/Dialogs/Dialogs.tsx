@@ -2,24 +2,26 @@ import s from '../Dialogs/Dialogs.module.css';
 import {DialogItem} from './DialogsItem/DialogsItem';
 import {Messages} from './Message/Messages';
 
+type DialogsType = {
+    id: number
+    name: string
+}
+
+type MessagesType = {
+    id: number
+    message: string
+}
+
+type DialogsPropsType = {
+    messages: MessagesType[]
+    dialogs: DialogsType[]
+}
+
+export const Dialogs = (props: DialogsPropsType) => {
 
 
-export const Dialogs = () => {
-
-    const dialogs = [
-        {id: 1, name: 'Dimych'},
-        {id: 2, name: 'Andrew'},
-        {id: 3, name: 'Oleg'}
-    ]
-
-    const messages = [
-        {id: 1, message: 'Hi'},
-        {id: 2, message: 'Hello'},
-        {id: 3, message: 'Aloha'}
-    ]
-
-    const dialogsElements = dialogs.map(d => <DialogItem name={d.name} id={d.id}/>)
-    const messagesElements = messages.map(m => <Messages message={m.message} id={m.id}/>)
+    const dialogsElements = props.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>)
+    const messagesElements = props.messages.map(m => <Messages message={m.message} id={m.id}/>)
 
     return (
         <div className={s.dialogs}>
