@@ -1,12 +1,17 @@
 import React from 'react';
 import s from './MyPosts.module.css'
 import {Post} from './Post/Post';
-import {state} from '../../../redux/state';
+import {PostsType} from '../../../redux/state';
 
 
-export const MyPosts = () => {
+type MyPostsType = {
+    posts: PostsType[]
+}
 
-    /*const postElements = state.profilePage.posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>)*/
+
+export const MyPosts = (props: MyPostsType) => {
+
+    const postElements = props.posts.map(p => <Post id={p.id} message={p.message} likesCount={p.likesCount}/>)
 
     return (
         <div className={s.postsBlock}>
@@ -18,7 +23,7 @@ export const MyPosts = () => {
                 <button>New post</button>
             </div>
             <div className={s.posts}>
-                {/*{postElements}*/}
+                {postElements}
             </div>
         </div>
     )

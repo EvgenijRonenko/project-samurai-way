@@ -1,17 +1,24 @@
 import React from 'react';
 import s from './Post.module.css'
 import {MyPosts} from '../MyPosts';
-import {state} from '../../../../redux/state';
+import {PostsType} from '../../../../redux/state';
 
 
 
-export const Post = () => {
+type PostType = {
+    posts: PostsType[]
+    id: number
+    likesCount: number
+    message: string
+}
+
+export const Post = (props: PostType) => {
     return (
         <div className={s.item}>
             <img src="https://www.filmfutter.com/wp-content/uploads/2020/09/Avatar2Drehende-696x384.jpg"/>
-            {state.profilePage.posts}
+            {props.posts}
             <div>
-                <span>{state.profilePage.posts[2]}</span>
+                <span>{props.likesCount}</span>
             </div>
         </div>
     )

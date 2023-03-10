@@ -1,21 +1,15 @@
 import s from '../Dialogs/Dialogs.module.css';
 import {DialogItem} from './DialogsItem/DialogsItem';
 import {Messages} from './Message/Messages';
-
-type DialogsType = {
-    id: number
-    name: string
-}
-
-type MessagesType = {
-    id: number
-    message: string
-}
+import {message} from 'antd';
+import {MessagesType, DialogsType} from '../../redux/state';
 
 type DialogsPropsType = {
-    messages: MessagesType[]
     dialogs: DialogsType[]
+    messages: MessagesType[]
+
 }
+
 
 export const Dialogs = (props: DialogsPropsType) => {
 
