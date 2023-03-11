@@ -3,6 +3,7 @@ import {DialogItem} from './DialogsItem/DialogsItem';
 import {Messages} from './Message/Messages';
 import {message} from 'antd';
 import {MessagesType, DialogsType} from '../../redux/state';
+import React from 'react';
 
 type DialogsPropsType = {
     dialogs: DialogsType[]
@@ -24,6 +25,12 @@ export const Dialogs = (props: DialogsPropsType) => {
             </div>
             <div className={s.messages}>
                 {messagesElements}
+            </div>
+            <div>
+                <textarea></textarea>
+            </div>
+            <div>
+                <button>Add message</button>
             </div>
         </div>
     )
